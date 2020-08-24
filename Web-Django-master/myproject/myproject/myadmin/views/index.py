@@ -31,7 +31,7 @@ def dologin(request):
 			import hashlib
 			m = hashlib.md5()
 			m.update(bytes(request.POST['password'], encoding="utf8"))
-			#校验密码是否正确
+			# 校验密码是否正确
 			if user.password == m.hexdigest():
 				request.session['adminuser'] = user.toDict()
 				return redirect(reverse('myadmin_index'))
@@ -89,7 +89,7 @@ def verify(request):
     draw.text((75, -3), rand_str[3], font=font, fill=fontcolor)
     #释放画笔
     del draw
-    #存入session，用于做进一步验证
+    # 存入session，用于做进一步验证
     request.session['verifycode'] = rand_str
     """
     python2的为

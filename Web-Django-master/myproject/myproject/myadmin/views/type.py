@@ -37,6 +37,7 @@ def insert(request):
 		context = {"info":"添加失败！"}
 	return render(request,"myadmin/info.html",context)
 
+
 def delete(request,tid):
 	'''删除信息'''
 	try:
@@ -52,6 +53,7 @@ def delete(request,tid):
 		context = {"info":"删除失败！"}
 	return render(request,"myadmin/info.html",context)
 
+
 def edit(request,tid):
 	'''加载编辑信息页面'''
 	try:
@@ -61,6 +63,7 @@ def edit(request,tid):
 	except Exception as err:
 		context = {"info": "没有找到要修改的信息！"}
 		return render(request, "myadmin/info.html", context)
+
 
 def update(request,tid):
 	'''执行编辑信息'''

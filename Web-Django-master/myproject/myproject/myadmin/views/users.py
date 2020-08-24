@@ -20,7 +20,7 @@ def index(request,pIndex):
 
 	#获取、判断并封装关于keyword键搜索
 	kw = request.GET.get("username",None)
-	if kw :
+	if kw:
 		#查询账号或姓名中含有关键字的
 		list = mod.filter(username__contains=kw) or mod.filter(name__contains=kw)
 		mywhere.append("keyword="+kw)
@@ -57,7 +57,7 @@ def add(request):
 def insert(request):
 	'''执行添加'''
 	try:
-		ob = Users() #实例化
+		ob = Users()  # 实例化
 		ob.username = request.POST['username']
 		ob.name = request.POST['name']
 		# 获取密码并md5
@@ -117,6 +117,7 @@ def update(request,uid):
 		print(err)
 		context = {"info":"修改失败！"}
 	return render(request,"myadmin/info.html",context)
+
 
 def reset(request,uid):
 	'''加载重置密码页面'''
