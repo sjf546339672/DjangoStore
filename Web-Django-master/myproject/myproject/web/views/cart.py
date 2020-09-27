@@ -76,4 +76,14 @@ def change(request):
     shoplist[shopid]['m'] = num #更改商品数量
     request.session['shoplist'] = shoplist
     return redirect(reverse('cart_index'))
-    #return render(request,"web/cart.html",context)
+    # return render(request,"web/cart.html", context)
+
+
+
+
+
+
+
+
+
+

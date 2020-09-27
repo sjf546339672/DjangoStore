@@ -8,7 +8,6 @@ from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from requests import Response
 from rest_framework.views import APIView
-
 from mymanage.models import UsersModel
 
 
@@ -112,4 +111,4 @@ class CreateVericationCode(APIView):
             # 将图片保存在内存中，文件类型为png
             im.save(buf, "png")
             # 将内存中的图片数据返回给客户端，MIME类型为图片png
-            return HttpResponse(buf.getvalue(), "image/png")
+            return HttpResponse(buf.getvalue(), "image/png")  #

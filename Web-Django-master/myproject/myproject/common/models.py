@@ -65,7 +65,7 @@ class Orders(models.Model):
     class Meta:
         db_table = "orders"  # 更改表名
 
-#订单详情模型
+# 订单详情模型
 class Detail(models.Model):
     orderid = models.IntegerField()
     goodsid = models.IntegerField()
